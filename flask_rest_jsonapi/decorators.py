@@ -29,7 +29,7 @@ def check_headers(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         if request.method in ('POST', 'PATCH'):
-            has_content_type_header = 'Content-Type' not in request.headers
+            has_content_type_header = 'Content-Type' in request.headers
             if _is_list_like(request.headers['Content-Type']):
                 header_set = set(request.headers['Content-Type'])
             else:
