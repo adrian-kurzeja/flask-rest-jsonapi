@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from six.moves.urllib.parse import urlencode, parse_qs
+from urllib.parse import urlencode, parse_qs
 import pytest
 
 from sqlalchemy import create_engine, Column, Integer, DateTime, String, ForeignKey
