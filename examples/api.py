@@ -34,7 +34,8 @@ class Computer(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
     person = db.relationship('Person', backref=db.backref('computers'))
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 # Create logical data abstraction (same as data storage for this first example)
